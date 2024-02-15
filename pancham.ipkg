@@ -1,0 +1,19 @@
+package pancham
+version = 1.0.0
+authors = "Ryxai"
+license = "MIT"
+brief = "FFI Bindings for basic endian operations for networking and bit rotation"
+readme = "README.md"
+
+langversion >= 0.6.0
+depends = base >= 0.6.0
+
+modules = Network.Endian
+        , Data.Bits.Extra
+
+
+sourcedir = "src"
+
+prebuild = "make -C c"
+postinstall = "make -C c install"
+postclean = "make -C c clean && rm -rf ./build"
